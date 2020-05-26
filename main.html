@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Generator of numbers</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<script src="https://use.fontawesome.com/c0a643ba73.js"></script>
+	<link rel="shortcut icon" href="img/random.ico" type="image/x-icon">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="check_lang">
+		<div id="en" class="translate"><img src="img/uk.svg" id="flag_uk"></div>
+		 <div id="ru" class="translate"><img src="img/russia.svg" id="flag_ru"></div>
+    </div>
+	<div class="header">
+		<h1 key="header" class="lang">Generator of Numbers</h1>
+	</div>	
+
+	<div class="generate_block">
+   <input id="result">
+	<button id="button" type="button" key="click" class="lang">Click</button>
+	<div id="refresh"><i class="fa fa-retweet"></i></div>
+  </div>
+
+  <div class="footer">
+	<div class="social"> 
+	<ul>
+		  <li><a href="https://instagram.com"><i class="fa fa-instagram"></i></a></li>
+		  <li><a href="https://facebook.com"><i class="fa fa-facebook"></i></a></li>
+		  <li><a href="https://linkedin.com"><i class="fa fa-linkedin"></i></a></li>
+	  </ul>
+	</div>   
+  </div>
+</div> 
+</body>
+<script src="js/generate.js"></script>
+<script type="text/javascript">
+    var arrLang = {
+      'en': {
+		'header': 'Generator of Numbers',
+		'click': 'click'
+      },
+      'ru': {
+		'header': 'Генератор Чисел',
+		'click': 'клик'
+      }
+    };
+
+    // Process translation
+    $(function() {
+      $('.translate').click(function() {
+        var lang = $(this).attr('id');
+
+        $('.lang').each(function(index, item) {
+          $(this).text(arrLang[lang][$(this).attr('key')]);
+        });
+      });
+    });
+  </script>
+</html>
